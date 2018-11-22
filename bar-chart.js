@@ -40,9 +40,9 @@ function createBar(svgSelector){
 			});*/
 
 			function getMaxDomainVal(arr){
-				
+
 				var max = parseFloat(d3.max(arr, function(d){return d.Value}));
-				
+
 				if (100 - max < 20){
 					return 100;
 				}else if(100 - max < 50){
@@ -113,7 +113,8 @@ function createBar(svgSelector){
 			      	.style("fill-opacity", 1);
 
 			  	barUpdate.select("rect")
-			      	.attr("width", function(d) { return x(d.Value); });
+			      	.attr("width", function(d) { return x(d.Value); })
+							.style("fill", "#1E88E5");
 
 			  	barUpdate.select(".value")
 			      	.attr("x", function(d) { return x(d.Value) - 15; })
@@ -126,7 +127,7 @@ function createBar(svgSelector){
 					.attr("transform", function(d) { return "translate(0," + (d.y0 + height) + ")"; })
 					.style("fill-opacity", 0)
 					.remove();
-					
+
 				d3.transition(svg)
 					.select(".x.axis")
 					.duration(750)
