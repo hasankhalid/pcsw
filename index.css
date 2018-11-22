@@ -62,12 +62,29 @@ html, body {
   font-size: 14px;
 }
 
+#bar-container {
+  display: flex;
+  flex-basis: 50%;
+}
+
+#bar-container svg {
+  width: 100%;
+  height: 100%;
+}
+
+g .tick {
+  font-family: 'Rubik', sans-serif;
+  font-size: 15px;
+}
+
 .flexContainer {
   display: flex;
 }
 
-.mapContain {
+.map-bar-column {
   width: 50%;
+  display: flex;
+  flex-direction: column;
 }
 .categoryVisContain {
   width: 50%;

@@ -13,12 +13,16 @@ var data = [
 
 var mainTitle = "Post-natal Health checks for newborns";
 
+var drawBarChart = createBar('#bar-chart');
 createCategoryChart(data, mainTitle);
 
 
 
  function createCategoryChart(visData, titleText) {
    d3.csv("./data.csv", function(data) {
+
+    globalData = data;
+    drawBarChart(data, 'Age ', 'Age')
      data = data.filter(function(d){
        return (d['Category type'] != 'Punjab')
     })
