@@ -91,6 +91,10 @@ g .tick {
   width: 100%;
 }
 
+.mapContain {
+  margin-bottom: 40px;
+}
+
 .firstHalf {
     width: 50%;
 }
