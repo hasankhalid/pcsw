@@ -18,10 +18,16 @@ createCategoryChart(data, mainTitle);
 
 
  function createCategoryChart(visData, titleText) {
-   d3.csv("./data.csv", function(data) {
+   d3.csv("./testInteract.csv", function(data) {
+     data = data.filter(function(d) {
+       return (d['IndicatorCode'] === '2.4')
+     })
      data = data.filter(function(d){
        return (d['Category type'] != 'Punjab')
     })
+    data = data.filter(function(d){
+      return (d['Category type'] != 'Districts')
+   })
      console.log(data);
      gdata= data;
      var fixedData = {};
@@ -121,7 +127,7 @@ createCategoryChart(data, mainTitle);
    console.log(category_label);
 
    if (category_label === "Wealth Quantiles") {
-     svgWidth = 57;
+     svgWidth = 60;
    }
    else if (category_label === "Area of residence") {
      svgWidth = 78;
@@ -134,6 +140,10 @@ createCategoryChart(data, mainTitle);
    }
    else if (category_label === "Disability") {
      svgWidth = 105;
+   }
+   else if (category_label === "Marital Status") {
+     svgWidth = 155;
+     console.log('Hello');
    }
    else {
      svgWidth = 55;
@@ -174,7 +184,7 @@ createCategoryChart(data, mainTitle);
        .style("padding-top", "2px")
        .append("text")
        .text(function(d, i){
-         return d.value + "%";
+         return Math.round(d.value * 100) / 100 + "%";
        })
        .style('color', '#616161');
  }

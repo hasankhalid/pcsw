@@ -104,3 +104,9 @@ html, body {
 .woman-icon {
   fill: #455A64;
 }
+
+.svg-contain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
