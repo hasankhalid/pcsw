@@ -1,0 +1,74 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+.topbar {
+  height: 100px;
+  background: #eee;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 5px 5%;
+  justify-content: space-between;
+}
+
+.topbarTitle {
+  font-size: 16px;
+  color: #546E7A;
+  font-weight: 400;
+  width: 350px;
+  margin-bottom: 0px;
+}
+
+.headingContain {
+  display: flex;
+  align-items: center;
+}
+
+.womanCircle {
+  width: 35px;
+  margin-right: 15px;
+}
+
+.logoPCSW {
+  width: 50px;
+  margin-right: 15px;
+}
+
+.contentContainer {
+  padding: 30px 5%;
+}
+
+.select {
+  width: 250px;
+  font-size: 14px;
+}
+
+.selectSection, .selectContain {
+  display: flex;
+}
+
+.selectContain {
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 10px;
+}
+
+.selectOption {
+  margin-bottom: 1px;
+  color: #1E88E5;
+  font-size: 14px;
+}
+
+.flexContainer {
+  display: flex;
+}
+
+.mapContain {
+  width: 50%;
+}
+.categoryVisContain {
+  width: 50%;
+}

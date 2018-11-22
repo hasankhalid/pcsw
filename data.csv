@@ -1,0 +1,30 @@
+﻿Category,Category type,Value
+Punjab ,Punjab,87
+Rural,Area of residence,86
+All Urban,Area of residence,56
+Major Cities,Area of residence,89
+Other Urban,Area of residence,90
+15-19,Age ,56
+20-24,Age ,67
+25-29,Age ,78
+30-34,Age ,98
+35- 44,Age ,46
+45 - 49,Age ,67
+50-54,Age ,86
+55-59,Age ,47
+60- 64,Age ,90
+Never Married,Marital Status,56
+Married,Marital Status,78
+Divorced,Marital Status,67
+Separated ,Marital Status,78
+Widow,Marital Status,90
+Employed,Employment Status,67
+Unemployed,Employment Status,78
+Inactive ,Employment Status,89
+With Disability ,Disability,56
+Without Disability,Disability,34
+Poorest ,Wealth Quantiles,56
+Poorer,Wealth Quantiles,67
+Middle ,Wealth Quantiles,70
+Richer ,Wealth Quantiles,74
+Richest,Wealth Quantiles,54
