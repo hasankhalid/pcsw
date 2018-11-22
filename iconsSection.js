@@ -20,8 +20,7 @@ createCategoryChart(data, mainTitle);
 
  function createCategoryChart(visData, titleText) {
    d3.csv("./testInteract.csv", function(data) {
-     globalData = data;
-     drawBarChart(data, 'Age ', 'Age')
+
      data = data.filter(function(d) {
        return (d['IndicatorCode'] === '2.4')
      })
@@ -31,6 +30,8 @@ createCategoryChart(data, mainTitle);
     data = data.filter(function(d){
       return (d['Category type'] != 'Districts')
    })
+   globalData = data;
+   drawBarChart(data, 'Age ', 'Age')
      console.log(data);
      gdata= data;
      var fixedData = {};
@@ -136,17 +137,13 @@ createCategoryChart(data, mainTitle);
      svgWidth = 78;
    }
    else if (category_label === "Marital Status") {
-     svgWidth = 68;
+     svgWidth = 132;
    }
    else if (category_label === "Employment Status") {
      svgWidth = 72;
    }
    else if (category_label === "Disability") {
      svgWidth = 105;
-   }
-   else if (category_label === "Marital Status") {
-     svgWidth = 155;
-     console.log('Hello');
    }
    else {
      svgWidth = 55;
