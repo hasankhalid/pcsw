@@ -72,3 +72,20 @@ html, body {
 .categoryVisContain {
   width: 50%;
 }
+
+.whole-strip {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 15px 30px;
+  background: white;
+  -webkit-box-shadow: 2px 2px 15px -1px rgba(224,224,224,1);
+  -moz-box-shadow: 2px 2px 15px -1px rgba(224,224,224,1);
+  box-shadow: 2px 2px 15px -1px rgba(224,224,224,1);
+}
+
+.sectionHeading {
+  font-weight: 300;
+  font-size: 28px;
+}

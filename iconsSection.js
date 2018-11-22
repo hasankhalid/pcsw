@@ -11,7 +11,7 @@ var data = [
   }
 ];
 
-var mainTitle = "Post-natal Health checks for newborns";
+var mainTitle = "";
 
 createCategoryChart(data, mainTitle);
 
@@ -86,6 +86,8 @@ createCategoryChart(data, mainTitle);
    disagg_type.append("text")
                .text(category_label);
 
+
+
    // parent block within div (contains the pictograms and associated data)
    var parent = svg.append("div")
                      .classed("parent-block", true)
@@ -112,11 +114,35 @@ createCategoryChart(data, mainTitle);
          })
          .style("font-size", "0.8em")
 
+   var svgWidth;
+
+   console.log(category_label);
+
+   if (category_label === "Wealth Quantiles") {
+     svgWidth = 57;
+   }
+   else if (category_label === "Area of residence") {
+     svgWidth = 78;
+   }
+   else if (category_label === "Marital Status") {
+     svgWidth = 68;
+   }
+   else if (category_label === "Employment Status") {
+     svgWidth = 72;
+   }
+   else if (category_label === "Disability") {
+     svgWidth = 105;
+   }
+   else {
+     svgWidth = 55;
+   }
+
+
    icons.append("div")
        .attr("class", "svg-contain")
        .append("svg")
        .attr("class", "woman-icon")
-       .attr("width", 64)
+       .attr("width", svgWidth)
        .attr("height", 64)
        .attr("viewBox", function(d, i ){ // "0 0 64 64"
          return 0 + " " + 0 + " " + 31.8 + " " + 31.8;
