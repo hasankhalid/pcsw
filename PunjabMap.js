@@ -15,8 +15,8 @@ let scaleCol = d3.scaleLinear()
 
 // defining the map svg with the class "map_in_a_box"
 let svg = d3.select(".mapContain")
-            .style("width", '400px')
-            .style("height", '494px')
+            .style("width", '360px')
+            .style("height", '434px')
             .append('svg')
             .attr('viewBox', `0 0 ${width} ${height}`)
             .attr('preserveAspectRatio', 'xMinYMin meet')
