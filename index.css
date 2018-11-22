@@ -66,9 +66,14 @@ html, body {
   display: flex;
 }
 
-.mapContain {
-  width: 50%;
+.mapContain, .barContain {
+  width: 100%;
 }
+
+.firstHalf {
+    width: 50%;
+}
+
 .categoryVisContain {
   width: 50%;
 }
