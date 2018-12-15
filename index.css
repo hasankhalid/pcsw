@@ -6,7 +6,8 @@ html, body {
 
 .topbar {
   height: 100px;
-  background: #eee;
+  background: #0072BC;
+  background: linear-gradient(45deg, #0072BC 0%, #0071B9 100%);
   width: 100%;
   display: flex;
   align-items: center;
@@ -14,9 +15,13 @@ html, body {
   justify-content: space-between;
 }
 
+.strideStory {
+  color: white;
+}
+
 .topbarTitle {
   font-size: 16px;
-  color: #546E7A;
+  color: white;
   font-weight: 400;
   width: 350px;
   margin-bottom: 0px;
@@ -58,7 +63,7 @@ html, body {
 
 .selectOption {
   margin-bottom: 1px;
-  color: #1E88E5;
+  color: white;
   font-size: 14px;
 }
 
@@ -79,6 +84,7 @@ g .tick {
 
 .flexContainer {
   display: flex;
+  margin-top: 20px;
 }
 
 .map-bar-column {
@@ -92,6 +98,10 @@ g .tick {
 }
 
 .mapContain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 40px;
 }
 
@@ -132,6 +142,7 @@ g .tick {
 .sectionHeading {
   font-weight: 300;
   font-size: 28px;
+  text-align: center;
 }
 
 .disagg_type, .labelcontain {
@@ -140,6 +151,44 @@ g .tick {
 
 #categorySelect {
   margin-bottom: 25px;
+}
+
+.selectedInd {
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.indicatorOne, .indicatorTwo {
+  font-size: 20px;
+}
+
+.join {
+  font-size: 20px;
+}
+
+.years {
+  font-size: 20px;
+  font-weight: 300;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid;
+  border-color: #e0e0e0;
+}
+
+.aboutStride {
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.footer {
+  background: linear-gradient(45deg, #0072BC 0%, #0071B9 100%);
+  color: white;
+}
+
+.exploreSTRIDE {
+  font-size: 24px;
+  font-weight: 300;
+  text-decoration: underline;
 }
 
 .woman-icon {

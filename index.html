@@ -2,7 +2,7 @@
 <html>
   <head>
     <link rel="icon" href="./resources/favicon.ico" type="image/x-icon" />
-    <title>Social Wellbeing Survey</title>
+    <title>STRIDE Indicators</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -28,61 +28,73 @@
   <body>
     <div class="topbar">
       <div class="headingContain">
-        <img class="womanCircle" src="./resources/womanCircle.svg"></img>
-        <h2 class="topbarTitle">Gathering Data for Women's Socio-Economic Wellbeing</h2>
+        <h2 class="topbarTitle">STRIDE logo</h2>
       </div>
-      <div class="selectSection">
-        <div class="selectContain">
-          <p class="selectOption">Indicator</p>
-          <select class="select" id="selectIndicator">
-            <option value="">Select Indicator...</option>
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-          </select>
+        <div class="selectSection">
+          <div class="selectContain">
+            <p class="selectOption">Select Indicator</p>
+            <select class="select" id="selectIndicator">
+              <option value="">Select Indicator...</option>
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+            </select>
+          </div>
+          <div class="selectContain">
+            <p class="selectOption">Select Indicator</p>
+            <select class="select" id="selectIndicatorTwo">
+              <option value="">Select Indicator...</option>
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+            </select>
+          </div>
         </div>
       </div>
     </div>
     <div class="contentContainer">
+      <div class="selectedIndicators">
+        <p class="selectedInd">Selected Indicators: <span class="indicatorOne"></span><span class="join"> and </span><span class="indicatorTwo"></span></p>
+        <p class="years">Showing comparison of for years 2017 and 2018</p>
+      </div>
       <div class="flexContainer">
         <div class="firstHalf">
-          <div class="mapContainer"><h2 class="sectionHeading" style="margin-bottom: 30px;">District level map on Punjab</h2>
+          <div class="mapContainer"><h2 class="sectionHeading" style="margin-bottom: 30px;">2016</h2>
             <div class="mapContain"></div>
           </div>
-          <div class="barContain"><h2 class="sectionHeading" style="margin-bottom: 20px;">View results by category</h2>
-            <div class="selectContain">
-              <p class="selectOption" style="margin-bottom: 10px;">Select Category</p>
-              <select class="select" id="categorySelect">
-                <option value="">Select Category...</option>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
-              </select>
-            </div>
-                <div class="map-bar-column">
-                  <div id="bar-container">
-                    <svg id="bar-chart" viewBox="0 0 800 600">
-                  </div>
-                </div>
+        </div>
+        <div class="categoryVisContain">
+          <div class="mapContainer"><h2 class="sectionHeading" style="margin-bottom: 30px;">2018</h2>
+            <div class="mapContain"></div>
           </div>
         </div>
-        <div class="categoryVisContain"><h2 class="sectionHeading">Category wise breakdown</h2></div>
       </div>
+      <p class="aboutStride">About STRIDE</p>
+      <p class="strideDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
+    <footer class="footer">
+      <div class="contentContainer">
+        <p class="exploreSTRIDE">Explore the STRIDE Story</p>
+        <div>
+          <p>STRIDE is a project by I-SAPS</p>
+        </div>
+      </div>
+    </footer>
 
     <script>
       $('#selectIndicator').selectize({
+          sortField: 'text'
+      });
+      $('#selectIndicatorTwo').selectize({
           sortField: 'text'
       });
       $('#categorySelect').selectize({
           sortField: 'text'
       });
     </script>
-
     <script src="./bar-chart.js"></script>
-    <script src="./iconsSection.js"></script>
     <script src="requiredData.js"></script>
     <script src="PunjabMap.js"></script>
   </body>
