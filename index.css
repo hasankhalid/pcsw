@@ -200,3 +200,34 @@ g .tick {
   align-items: center;
   justify-content: center;
 }
+
+svg {
+  filter: drop-shadow(1px 6px 3px rgb(0,0,0,0.15));
+}
+
+.g-map {
+  transform : translate(50px, 50px);
+  fill : none;
+  stroke: #3F51B5;
+    stroke-width: 1.2px
+}
+
+.g-circles {
+  transform : translate(50px, 50px);
+  stroke: #fff;
+  stroke-width: 1px; 
+}
+
+.g-outline {
+  transform : translate(50px, 50px);
+  stroke: #2196F3;
+  fill: none;
+  stroke-width: 1.2px; 
+}
+
+.c-tooltip {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  max-width: 350px;
+}
