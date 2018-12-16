@@ -200,3 +200,49 @@ g .tick {
   align-items: center;
   justify-content: center;
 }
+
+@media only screen and (max-width: 1000px) {
+  .topbar {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 150px;
+  }
+  .selectSection {
+    padding-top: 15px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .flexContainer {
+    flex-direction: column;
+  }
+  .firstHalf, .categoryVisContain {
+    width: 100%;
+  }
+}
+
+
+@media only screen and (max-width: 650px) {
+  .selectSection {
+    justify-content: space-between;
+  }
+  .select {
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .selectSection {
+    flex-direction: column;
+  }
+  .topbar {
+    height: 180px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .headingContain {
+    width: 100px;
+  }
+}
