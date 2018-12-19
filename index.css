@@ -4,11 +4,72 @@ html, body {
   font-family: 'Roboto', sans-serif;
 }
 
-.topbar {
-  height: 100px;
-  background: #0072BC;
-  background: linear-gradient(45deg, #0072BC 0%, #0071B9 100%);
+.strideCaseLanding {
+  height: 100%;
+}
+
+.landingImage {
+  background-image: url('./resources/cyclegirls.jpg');
+  position: absolute;
+  top: 0px;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
   width: 100%;
+}
+
+.landingOverlay {
+  background: rgb(0,114,188);
+  background: linear-gradient(145deg, #212121 0%, #000000 100%);
+  opacity: 0.35;
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+.landingContent {
+  padding: 5px 5%;
+  height: calc(100% - 50px);
+  z-index: 10;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.titleContain {
+  color: white;
+}
+
+.navigationItem {
+  color: white;
+}
+
+.aboutStride {
+  padding: 50px 5%;
+  color: white;
+  background-color: #616161;
+}
+
+.aboutHead {
+  font-size: 20px;
+  color: white;
+  font-weight: 300;
+}
+
+.strideDescription {
+  font-size: 14px;
+}
+
+.inputbar {
+  padding: 5px 5%;
+  background-color: #616161;
+}
+
+.topbar {
+  z-index: 10;
+  position: relative;
+  height: 50px;
   display: flex;
   align-items: center;
   padding: 5px 5%;
@@ -44,6 +105,7 @@ html, body {
 
 .contentContainer {
   padding: 30px 5%;
+  background-color: #616161;
 }
 
 .select {
@@ -141,7 +203,8 @@ g .tick {
 
 .sectionHeading {
   font-weight: 300;
-  font-size: 28px;
+  font-size: 22px;
+  color: white;
   text-align: center;
 }
 
@@ -154,12 +217,13 @@ g .tick {
 }
 
 .selectedInd {
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 300;
+  color: white;
 }
 
 .indicatorOne, .indicatorTwo {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .join {
@@ -167,12 +231,13 @@ g .tick {
 }
 
 .years {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
   padding-bottom: 10px;
   margin-bottom: 30px;
   border-bottom: 1px solid;
-  border-color: #e0e0e0;
+  border-color: #9E9E9E;
+  color: white;
 }
 
 .aboutStride {
@@ -181,8 +246,25 @@ g .tick {
 }
 
 .footer {
-  background: linear-gradient(45deg, #0072BC 0%, #0071B9 100%);
-  color: white;
+  padding-top: 20px;
+}
+
+.isapsInformation {
+  padding-bottom: 20px;
+}
+
+.footerText {
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+
+.institute {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.fa-map-marker-alt {
+  margin-right: 8px;
 }
 
 .exploreSTRIDE {
@@ -201,15 +283,11 @@ g .tick {
   justify-content: center;
 }
 
-svg {
-  filter: drop-shadow(1px 6px 3px rgb(0,0,0,0.15));
-}
-
 .g-map {
   transform : translate(50px, 50px);
   fill : none;
-  stroke: #3F51B5;
-    stroke-width: 1.2px
+  stroke: #616161;
+  stroke-width: 1.2px
 }
 
 .g-circles {
@@ -229,7 +307,43 @@ svg {
   display: flex;
   position: fixed;
   flex-direction: column;
-  max-width: 350px;
+  width: 250px;
+  background-color: rgba(238, 238, 238, 0.6);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.c-tooltip-header {
+  background-color: rgba(94, 94, 94, 0.6);
+  color: white;
+  margin: -10px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 15px 10px;
+  margin-bottom: 10px;
+}
+
+.indicatorTool {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.indicatorHeading {
+  color: #212121;
+}
+
+.indicatorValue {
+  color: #455A64;
+}
+
+.footercontentcontainer {
+  background-color: white;
+}
+
+.footerbottombar {
+  background-color: #424242;
+  height: 15px;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -244,7 +358,7 @@ svg {
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 800px) {
   .flexContainer {
     flex-direction: column;
   }

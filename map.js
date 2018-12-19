@@ -15,7 +15,7 @@ async function initMapCreator(){
 			kohatTehsilsGeoJSON : res[3]
 		};
 	}
-	
+
 	function fixData(indicatorData, ucLocs){
 		/*var ucObj = {};
 		indicatorData.forEach((d)=>{ucObj[d['UC Name']] = d;});*/
@@ -31,7 +31,7 @@ async function initMapCreator(){
 	}
 
 	var mapData = await getAllData();
-	
+
 	//remove duplicates and add xy coordinates to indicator data
 
 	console.log(mapData);
@@ -46,10 +46,10 @@ async function initMapCreator(){
 	mapData.indicatorData = fixData(mapData.indicatorData, mapData.ucLocs);
 	mapData.indicatorData2018 = mapData.indicatorData.filter((d)=>d.Year === '2018');
 	mapData.indicatorData2017 = mapData.indicatorData.filter((d)=>d.Year === '2017');
-	
+
 
 	//var geoGenerator;
-	
+
 	//ucLocs;
 	var bosNames = {"Attock":"Attock","Bahawalnagar":"Bahawalnagar","Bahawalpur":"Bahawalpur","Bhakkar":"Bhakkar","Chakwal":"Chakwal","Chiniot":"Chiniot","Dera Ghazi Khan":"DG Khan","Faisalabad":"Faisalabad","Gujranwala":"Gujranwala","Gujrat":"Gujrat","Hafizabad":"Hafizabad","Jhang":"Jhang","Jhelum":"Jhelum","Kasur":"Kasur","Khanewal":"Khanewal","Khushab":"Khushab","Lahore":"Lahore","Layyah":"Layyah","Lodhran":"Lodhran","Mandi Bahauddin":"Mandi Bahauddin","Mianwali":"Mianwali","Multan":"Multan","Muzaffargarh":"Muzaffargarh","Nankana Sahib":"Nankana Sahib","Narowal":"Narowal","Okara":"Okara","Pakpattan":"Pakpattan","Rahim Yar Khan":"RY Khan","Rajanpur":"Rajanpur","Rawalpindi":"Rawalpindi","Sahiwal":"Sahiwal","Sargodha":"Sargodha","Sheikhupura":"Sheikhupura","Sialkot":"Sialkot","Toba Tek Singh":"TT Singh","Vehari":"Vehari"};
 
@@ -90,7 +90,8 @@ async function initMapCreator(){
 
 		var gMap = svg
 			.append('g')
-			.attr('class', 'g-map');
+			.attr('class', 'g-map')
+			.style('fill', '#757575');
 
 		/*gMap.selectAll('path')
 		    .data(data.features)
@@ -103,7 +104,7 @@ async function initMapCreator(){
 		    	.attr('stroke-dashoffset', function(){
 		    		return this.getTotalLength();
 		    	});*/
-		    
+
 
 		await new Promise(function(resolve){
 			gMap.selectAll('path')
@@ -136,18 +137,18 @@ async function initMapCreator(){
 		createCircles(gCircles, indicatorData, cIndicator, rIndicator, scaleArr);
 	}
 
-	function allTransitionEnd(transition, callback) { 
+	function allTransitionEnd(transition, callback) {
 	    if (typeof callback !== "function") throw new Error("Wrong callback in endall");
 	    if (transition.size() === 0) { callback() }
-	    var n = 0; 
-	    transition 
-	        .each(function() { ++n; }) 
+	    var n = 0;
+	    transition
+	        .each(function() { ++n; })
 	        .on("end", function() {
-	         	if (!--n) callback(); 
-	     	}); 
+	         	if (!--n) callback();
+	     	});
 	 }
 
-	var currentIdicators = {};  
+	var currentIdicators = {};
 
 	async function createCircles(g, indicatorData, rIndicator, cIndicator, scaleArr){
 
@@ -174,7 +175,7 @@ async function initMapCreator(){
 				parseFloat(d3.min(scaleArr,(d)=>parseFloat(d[cIndicator]))),
 				parseFloat(d3.max(scaleArr,(d)=>parseFloat(d[cIndicator])))
 			])
-    		.range(['#90CAF9', '#1A237E']);
+    		.range(['#FFFFFF', '#D4E157']);
 
 
 		forceSim(indicatorData, rScale, rIndicator);
@@ -216,7 +217,7 @@ async function initMapCreator(){
 		var selectedCircle = this;
 
 		/*d3.selectAll('.g-map').selectAll('path').filter((e)=>e.properties.districts === d.District).transition().duration(400).attr('stroke-dashoffset',0);*/
-		
+
 		circleG.selectAll('.g-circles circle')
 			.filter((d)=>!d.filtered)
 			.transition()
@@ -231,7 +232,7 @@ async function initMapCreator(){
 
 	function removeDistrictHighlight(d, circleG){
 		/*d3.selectAll('.g-map').selectAll('path').filter((e)=>e.properties.districts === d.District).transition().duration(400).attr('stroke-dashoffset',function(){return this.getTotalLength()});*/
-		
+
 		circleG.selectAll('.g-circles circle')
 			.filter((d)=>!d.filtered)
 			.transition()
@@ -259,7 +260,7 @@ async function initMapCreator(){
 			.force('y', d3.forceY(function(d){
 			return d.centroid[1]}))
 		  .force('collision', d3.forceCollide().radius(function(d) {
-		    return scale(d[sInd]);
+		    return scale(d[sInd]) + 2;
 		  }))
 		  .stop();
 
@@ -300,9 +301,9 @@ async function initMapCreator(){
 
 		var filtered = d3.selectAll('.g-circles circle')
 			.filter((d)=>d.filtered);
-		
+
 		filtered = unfilterSelection(filtered, indicator);
-		
+
 		filtered.each((d)=>{
 				d.filtered  = false;
 			})
@@ -336,16 +337,15 @@ async function initMapCreator(){
 				.append('div')
 					.attr('id', 'circles-tooltip' + d.id)
 					.classed('c-tooltip', true)
-					.style('background-color', 'rgba(255, 0, 0, 0.4)')
 					.style('opacity', 0);
 
 			tooltip.append('div')
 					.classed('c-tooltip-header', true)
-					.html(`<h1>Union Council : ${d['UC Name']}</h1>`);
+					.html(`<h1 style="font-size: 16px; margin-bottom: 0px; font-weight: 400;">Union Council : ${d['UC Name']}</h1>`);
 
 			tooltip.append('div')
 					.classed('c-tooltip-body', true)
-					.html(`<div>${currentIdicators.rIndicator} : ${d[currentIdicators.rIndicator]}</div><div>${currentIdicators.cIndicator} : ${d[currentIdicators.cIndicator]}</div>`);
+					.html(`<div class="indicatorTool"><span class="indicatorHeading">${currentIdicators.rIndicator}</span><span class="indicatorValue"> ${d[currentIdicators.rIndicator]}</span></div><div class="indicatorTool"><span class="indicatorHeading">${currentIdicators.cIndicator}</span><span class="indicatorValue"> ${d[currentIdicators.cIndicator]}</span></div>`);
 
 			var finalPos = getToolTipPosition(event, tooltip.node());
 

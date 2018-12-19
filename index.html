@@ -23,10 +23,42 @@
   </head>
 
   <body>
-    <div class="topbar">
-      <div class="headingContain">
-        <h2 class="topbarTitle">STRIDE logo</h2>
+    <div class="strideCaseLanding">
+      <div class="landingImage">
       </div>
+      <div class="landingOverlay">
+      </div>
+      <div class="topbar">
+        <div class="headingContain">
+          <h2 class="topbarTitle">STRIDE logo</h2>
+        </div>
+        <div class="navigationButts">
+          <span class="navigationItem">STRIDE Concept</span>
+        </div>
+      </div>
+      <div class="landingContent">
+        <div class="titleContain">
+          <h2>STRIDE intervention in Union Council Nusret Khel</h2>
+          <p>A case study</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="aboutStride">
+      <p class="aboutHead">Context</p>
+      <p class="strideDescription">According to the Khyber Pakhtunkhwa EMIS data, District Kohat had 845 public schools in 2017 but only 186 of these schools enrolled students at secondary level. Among the 32 union councils in the district, 50% did not have a middle school, 56% were without high schools while 9% union councils did not have any post-primary school.</p>
+      <p class="strideDescription">The lack of post-primary schools has resulted in a high drop-out rate for students completing grade 5. Enrolment data reveals that 44% of the student cohort enrolled in Grade 5 in 2012-13 dropped out before reaching Grade 10 in 2017-18. The government faces funding and time constraints to build new schools to improve the plummeting retention and transition rates of students. To address this,  I-SAPS has introduced a cost-effective and innovative approach called Sustainable Transition and Retention in Delivering Education (STRIDE). STRIDE aims at improving transition and retention of students beyond primary level by</p>
+      <ul>
+        <li class="strideDescription">Introducing localized planning and policy making for education</li>
+        <li class="strideDescription">Based on local needs, establishing higher level schools in existing primary and middle schools</li>
+        <li class="strideDescription">Providing transportation incentives if necessary</li>
+        <li class="strideDescription">Ensuring participation of the community in the local planning for education</li>
+      </ul>
+      <p class="strideDescription">In May 2017, I-SAPS team undertook local planning to unearth the challenge in Kohat at local (union council) level. Guided by the local planning, solutions tailored to local needs are being  implemented in 12 union councils of Kohat since September 2017. These include establishment of 15 afternoon higher level schools in existing school buildings and provision of transport facilities to encourage students to continue with schooling. Community was also involved to support the design and implementation of these solutions. For instance, localized policy analysis revealed that in village Jabbi in Union Council Nasrat Khel (which has 7 primary and 1 middle school ), all girls were unable to continue their education beyond primary school because the only middle school in the union council was 11 kilometers away. To address this, I-SAPS upgraded a primary school in the village (GGPS Jabbi) to middle level in the afternoon shift. Consequently, 31 girls who had earlier dropped out of schools, enrolled in the STRIDE school.</p>
+    </div>
+
+    <div class="inputbar">
+      <p class="aboutHead">Explore Education Indicators in Kohat</p>
         <div class="selectSection">
           <div class="selectContain">
             <p class="selectOption">Select Indicator</p>
@@ -46,7 +78,7 @@
     <div class="contentContainer">
       <div class="selectedIndicators">
         <p class="selectedInd">Selected Indicators: <span class="indicatorOne"></span><span class="join"> and </span><span class="indicatorTwo"></span></p>
-        <p class="years">Showing comparison of for years 2017 and 2018</p>
+        <p class="years">Showing comparison of for years 2018 and 2017</p>
       </div>
       <div class="flexContainer">
         <div class="firstHalf">
@@ -66,16 +98,17 @@
           </div>
         </div>
       </div>
-      <p class="aboutStride">About STRIDE</p>
-      <p class="strideDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
     <footer class="footer">
-      <div class="contentContainer">
+      <div class="contentContainer footercontentcontainer">
         <p class="exploreSTRIDE">Explore the STRIDE Story</p>
-        <div>
-          <p>STRIDE is a project by I-SAPS</p>
+        <div class="isapsInformation">
+          <p class="footerText institute">Institute of Social and Policy Sciences</p>
+          <p class="footerText"><i class="fas fa-map-marker-alt"></i>12 Mauve Area G-8/1, Islamabad</p>
+          <p class="footerText"><i class="fas fa-phone"></i> +92-51-111-739-739 <i class="fas fa-envelope"></i> info@i-saps.org</p>
         </div>
       </div>
+      <div class="footerbottombar"></div>
     </footer>
     <script src="./map.js"></script>
     <script src="requiredData.js"></script>
@@ -95,7 +128,7 @@
         mapObj.createMap('#map2017', mapObj.mapData.indicatorData2017, mapObj.mapData.kohatTehsilsGeoJSON, mapObj.mapData.indicatorData, rIndicator, cIndicator);
 
         var selectOptions = mapObj.mapData.indicators.map((d)=>{return {text : d, value : d}});
-        
+
         select1 = $('#selectIndicator').selectize({
           sortField: 'text',
           options : selectOptions
@@ -112,7 +145,7 @@
         $('.select').on('change', changeIndicators);
 
         function changeIndicators(){
-        
+
           var rIndicator = $('#selectIndicator').val();
           var cIndicator = $('#selectIndicatorTwo').val();
 
