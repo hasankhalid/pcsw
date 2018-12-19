@@ -260,7 +260,7 @@ async function initMapCreator(){
 			.force('y', d3.forceY(function(d){
 			return d.centroid[1]}))
 		  .force('collision', d3.forceCollide().radius(function(d) {
-		    return scale(d[sInd]) + 2;
+		    return scale(d[sInd]) + 3;
 		  }))
 		  .stop();
 
@@ -341,7 +341,7 @@ async function initMapCreator(){
 
 			tooltip.append('div')
 					.classed('c-tooltip-header', true)
-					.html(`<h1 style="font-size: 16px; margin-bottom: 0px; font-weight: 400;">Union Council : ${d['UC Name']}</h1>`);
+					.html(`<h1 style="font-size: 14px; margin-bottom: 0px; font-weight: 300;">Union Council: <span class="UCNAME">${d['UC Name']}</span></h1>`);
 
 			tooltip.append('div')
 					.classed('c-tooltip-body', true)

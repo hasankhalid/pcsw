@@ -245,21 +245,17 @@ g .tick {
   font-weight: 300;
 }
 
-.footer {
-  padding-top: 20px;
-}
-
 .isapsInformation {
   padding-bottom: 20px;
 }
 
 .footerText {
-  font-size: 16px;
+  font-size: 14px;
   margin-bottom: 3px;
 }
 
 .institute {
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 5px;
 }
 
@@ -267,8 +263,12 @@ g .tick {
   margin-right: 8px;
 }
 
+.fa-envelope {
+  margin-left: 10px;
+}
+
 .exploreSTRIDE {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 300;
   text-decoration: underline;
 }
@@ -307,7 +307,7 @@ g .tick {
   display: flex;
   position: fixed;
   flex-direction: column;
-  width: 250px;
+  width: 190px;
   background-color: rgba(238, 238, 238, 0.6);
   padding: 10px;
   border-radius: 8px;
@@ -319,13 +319,18 @@ g .tick {
   margin: -10px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  padding: 15px 10px;
+  padding: 10px 10px;
   margin-bottom: 10px;
 }
 
 .indicatorTool {
   display: flex;
   justify-content: space-between;
+  font-size: 14px;
+}
+
+.UCNAME {
+  font-weight: 400;
   font-size: 14px;
 }
 
@@ -339,6 +344,7 @@ g .tick {
 
 .footercontentcontainer {
   background-color: white;
+  padding: 5px 5%;
 }
 
 .footerbottombar {
@@ -347,12 +353,6 @@ g .tick {
 }
 
 @media only screen and (max-width: 1000px) {
-  .topbar {
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    height: 150px;
-  }
   .selectSection {
     padding-top: 15px;
   }
@@ -381,13 +381,10 @@ g .tick {
   .selectSection {
     flex-direction: column;
   }
-  .topbar {
-    height: 180px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
   .headingContain {
     width: 100px;
+  }
+  .footercontentcontainer {
+    padding: 15px 5%;
   }
 }
